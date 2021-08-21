@@ -5,7 +5,7 @@ const initialState = []
 const reducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_FRUITS:
-      return action.fruits
+      return action.people
     default:
       return state
   }

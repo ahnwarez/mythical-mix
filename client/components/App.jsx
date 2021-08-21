@@ -13,8 +13,8 @@ function App (props) {
       <div className='app'>
         <h1>Fullstack Boilerplate - with Fruits!</h1>
         <ul>
-          {props.fruits.map(fruit => (
-            <li key={fruit}>{fruit}</li>
+          {props.results.map(people => (
+            <li key={people.id}>{people.name}</li>
           ))}
         </ul>
       </div>
@@ -23,7 +23,7 @@ function App (props) {
 }
 const mapStateToProps = (globalState) => {
   return {
-    fruits: globalState.fruits
+    results: globalState.people
   }
 }
 
