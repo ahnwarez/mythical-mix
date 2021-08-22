@@ -1,8 +1,7 @@
 
-import React, { useEffect, useState } from 'react'
-import { getPeople } from '../apis/people'
+import React, { useState } from 'react'
 
-function Home() {
+function Form() {
     const [form, setForm] = useState({
         team1: '',
         team2: '',
@@ -19,7 +18,7 @@ function Home() {
     }
 
     return (
-        <div className='input-fields'>
+        <div className='form'>
             <input className='input-team' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
             <input className='input-team' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
             <input className='input-team' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
@@ -31,4 +30,4 @@ function Home() {
     )
 }
 
-export default Home
+export default Form
