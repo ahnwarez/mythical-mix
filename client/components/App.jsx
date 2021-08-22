@@ -7,6 +7,7 @@ function App() {
 
   return (
     <div className="app">
+      <h2 className='title'>Mythical Mix</h2>
       <Home />
       <PeopleList />
     </div>

@@ -24,7 +24,9 @@ function Home() {
             <input className='input-team' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
             <input className='input-team' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
             <input className='input-team' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
-            <button className='shuffle-button'>Shuffle</button>
+            <div >
+                <button className='shuffle-button'>🔀 Shuffle</button>
+            </div>
         </div>
     )
 }
