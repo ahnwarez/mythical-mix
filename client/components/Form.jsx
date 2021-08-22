@@ -1,5 +1,5 @@
-
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 
 function Form() {
     const [form, setForm] = useState({
@@ -24,7 +24,9 @@ function Form() {
             <input className='input-team' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
             <input className='input-team' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
             <div >
-                <button className='shuffle-button'>🔀 Shuffle</button>
+                <Link to="/shuffle">
+                    <button className='shuffle-button' >🔀 Shuffle</button>
+                </Link>
             </div>
         </div>
     )

@@ -12,7 +12,7 @@ function PeopleList() {
     return (
         <div className='people-group'>
             {people.map(person => (
-                <div className='person-card'>
+                <div key={person.id} className='person-card'>
                     <div>
                         <img width='20px' src='user.svg' alt='user avatar' />
                     </div>
