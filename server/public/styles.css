@@ -48,6 +48,7 @@ input {
   border-style: solid;
   border-color: rgb(37, 124, 255);
   padding: 10px;
+  cursor: default; 
 }
 
 .name {
@@ -64,4 +65,5 @@ input {
   border-width: 1px;
   border-style: solid;
   padding: 10px;
+  cursor: pointer;
 }
