@@ -10,24 +10,25 @@ function PeopleList() {
     }, [])
 
     return (
-        <div className='list'>
-            <div className='people-list'>
-                {people.map(person => (
-                    <div className='person-card-group' key={person.id}>
-                        <div className='person-card'>
-                            <div>
-                                👤
-                            </div>
-                            <div>
-                                {person.name}
-                            </div>
-                        </div>
-                    </div>
-                ))}
-                <div className='person-add'>
+        <div className='people-list'>
+            {people.map(person => (
+                <div className='person-card'>
                     <div>
-                        ➕
+                        <img src='user.svg' alt='user avatar' />
                     </div>
+                    <div className='name'>
+                        {person.name}
+                    </div>
+                </div>
+            ))}
+            <div className='action'>
+                <div>
+                    🗑️
+                </div>
+            </div>
+            <div className='action'>
+                <div>
+                    ➕
                 </div>
             </div>
         </div>
