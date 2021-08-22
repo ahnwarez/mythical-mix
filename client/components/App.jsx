@@ -1,13 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import Home from './Home'
+import PeopleList from './PeopleList'
 
-function App(props) {
+function App() {
 
   return (
-    <>
+    <div className="app">
       <Home />
-    </>
+      <PeopleList />
+    </div>
   )
 }
 const mapStateToProps = (globalState) => {
