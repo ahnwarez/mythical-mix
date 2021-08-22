@@ -1,23 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
+import Home from './Home'
 
-import { fetchFruits } from '../actions'
-
-function App (props) {
-  useEffect(() => {
-    props.dispatch(fetchFruits())
-  }, [])
+function App(props) {
 
   return (
     <>
-      <div className='app'>
-        <h1>Fullstack Boilerplate - with Fruits!</h1>
-        <ul>
-          {props.results.map(people => (
-            <li key={people.id}>{people.name}</li>
-          ))}
-        </ul>
-      </div>
+      <Home />
     </>
   )
 }
