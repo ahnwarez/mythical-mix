@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
-function Form() {
+function Form(props) {
     const [form, setForm] = useState({
         team1: '',
         team2: '',
@@ -17,6 +17,10 @@ function Form() {
         })
     }
 
+    function onSubmit() {
+        props.onSubmit(form)
+    }
+
     return (
         <div className='form'>
             <input className='input-team' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
@@ -24,9 +28,11 @@ function Form() {
             <input className='input-team' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
             <input className='input-team' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
             <div >
-                <Link to="/shuffle">
-                    <button className='shuffle-button' >🔀 Shuffle</button>
-                </Link>
+                <button
+                    className='shuffle-button'
+                    onClick={onSubmit} >
+                    🔀 Shuffle
+                </button>
             </div>
         </div>
     )

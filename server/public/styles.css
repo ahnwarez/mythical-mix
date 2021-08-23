@@ -49,6 +49,7 @@ input {
   border-color: rgb(37, 124, 255);
   padding: 10px;
   cursor: default; 
+  box-shadow: 3px 3px rgb(204, 204, 204);
 }
 
 .name {
