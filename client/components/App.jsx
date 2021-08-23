@@ -9,7 +9,6 @@ function App() {
   const history = useHistory()
 
   function onSubmit(form) {
-    console.log(form);
     localStorage.setItem('teams', JSON.stringify(form))
     history.push('/shuffle')
   }
