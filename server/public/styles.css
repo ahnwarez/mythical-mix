@@ -18,7 +18,6 @@ body {
   grid-column: 2 / 3;
   display: flex;
   flex-direction: column;
-  
 }
 
 .people-group {
@@ -35,6 +34,7 @@ input {
 
 .title {
   text-align: center;
+  cursor: pointer;
 }
 
 .person-card {
@@ -67,4 +67,28 @@ input {
   border-style: solid;
   padding: 10px;
   cursor: pointer;
+  transition-duration: 0.4s;
+}
+.action:hover {
+  background-color: rgb(216, 141, 2);
+  color:white;
+}
+ .shuffle-button {
+  align-self: flex-end;
+  background-color: cornflowerblue; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+.shuffle-button:hover {
+  background-color: #008CBA;
+  color: white;
 }
