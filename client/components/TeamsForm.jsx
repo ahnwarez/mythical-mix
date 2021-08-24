@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom';
 
-function Form(props) {
+function TeamsForm(props) {
     const [form, setForm] = useState({
         team1: '',
         team2: '',
@@ -36,4 +36,4 @@ function Form(props) {
     )
 }
 
-export default Form
+export default TeamsForm
