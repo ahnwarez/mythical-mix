@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { addPerson } from '../apis/people'
 
 const AddPerson = (props) => {
     const [value, setValue] = useState('')
@@ -7,8 +8,8 @@ const AddPerson = (props) => {
         setValue(evt.target.value)
     }
 
-    function handleSubmit() {
-        console.log('submit add');
+    async function handleSubmit() {
+        await addPerson(value)
         props.history.push('/')
     }
 
@@ -18,6 +19,7 @@ const AddPerson = (props) => {
                 onChange={handleChange}
                 value={value}
                 className='input-team'
+                placeholder='Enter person name'
             />
             <button onClick={handleSubmit}>➕</button>
         </div>

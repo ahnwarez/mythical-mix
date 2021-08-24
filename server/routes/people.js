@@ -14,4 +14,26 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.post('/add', async (req, res) => {
+  try {
+    const { name } = req.body
+    await db.addPerson(name)
+    res.sendStatus(201)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json({ message: 'Somthing went wrong' })
+  }
+})
+
+router.delete('/delete', async (req, res) => {
+  try {
+    const { id } = req.body
+    await db.deletePerson(id)
+    res.sendStatus(201)
+  } catch (err) {
+    console.log(err)
+    res.status(500).json({ message: 'Somthing went wrong' })
+  }
+})
+
 module.exports = router

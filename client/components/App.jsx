@@ -4,7 +4,6 @@ import TeamsForm from './TeamsForm'
 import PeopleList from './PeopleList'
 import Shuffled from './Shuffled'
 import AddPerson from './AddPerson';
-import DeletePerson from './DeletePerson';
 
 function App() {
 
@@ -26,7 +25,6 @@ function App() {
         <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
         <Route path='/' exact component={PeopleList} />
         <Route path='/add' exact component={AddPerson} />
-        <Route path='/delete' exact component={DeletePerson} />
         <Route path='/shuffle' exact component={Shuffled} />
       </div>
     </>
