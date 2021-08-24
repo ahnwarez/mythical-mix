@@ -1,13 +1,21 @@
 import React, { useEffect, useState } from 'react'
 import { getPeople } from '../apis/people'
 
-function PeopleList() {
+function PeopleList(props) {
     const [people, setPeople] = useState([])
 
     useEffect(async () => {
         const people = await getPeople()
         setPeople(people)
     }, [])
+
+    function handleAdd() {
+        props.history.push('/add')
+    }
+
+    function handleDelete() {
+        props.history.push('/delete')
+    }
 
     return (
         <div className='people-group'>
@@ -21,15 +29,17 @@ function PeopleList() {
                     </div>
                 </div>
             ))}
-            <div className='action'>
-                <div>
-                    🗑️
-                </div>
+            <div
+                className='action'
+                onClick={handleDelete}
+            >
+                🗑️
             </div>
-            <div className='action'>
-                <div>
-                    ➕
-                </div>
+            <div
+                className='action'
+                onClick={handleAdd}
+            >
+                ➕
             </div>
         </div>
     )

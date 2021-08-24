@@ -29,7 +29,6 @@ body {
 
 input {
   font-size: 20px;
-  margin-bottom: 20px;
 }
 
 .title {
@@ -91,4 +90,12 @@ input {
 .shuffle-button:hover {
   background-color: #008CBA;
   color: white;
+}
+
+
+.modify-form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  grid-column: 3 / 4;
 }
