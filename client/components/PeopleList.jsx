@@ -24,13 +24,11 @@ function PeopleList(props) {
     }
 
     function handlePersonClick(selectedPerson) {
-        console.log(selectedPerson);
         setPeople(
             [...people
                 .map(person => ({
                     ...person,
-                    selected: person.id === selectedPerson.id ? true : false
-                    // style: { borderColor: 'red' }
+                    selected: person.id === selectedPerson.id ? !person.selected : false
                 }))
             ]
         )
