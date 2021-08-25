@@ -16,8 +16,8 @@ router.get('/', async (req, res) => {
 
 router.post('/add', async (req, res) => {
   try {
-    const { name } = req.body
-    await db.addPerson(name)
+    const { name, imageUrl } = req.body
+    await db.addPerson({ name, imageUrl })
     res.sendStatus(201)
   } catch (err) {
     console.log(err)

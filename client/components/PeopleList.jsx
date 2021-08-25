@@ -11,7 +11,6 @@ function PeopleList(props) {
             selected: false,
             style: { borderColor: 'rgb(37, 124, 255)' }
         })))
-        console.log(people);
     }, [])
 
     function handleAdd() {
@@ -47,7 +46,11 @@ function PeopleList(props) {
                     style={{ borderColor: person.selected ? 'red' : 'rgb(37, 124, 255)' }}
                 >
                     <div>
-                        <img width='20px' src='user.svg' alt='user avatar' />
+                        <img
+                            width='50px'
+                            src={person.imageUrl ? person.imageUrl : '/user.svg'}
+                            className='avatar'
+                            alt='user avatar' />
                     </div>
                     <div className='name'>
                         {person.name}

@@ -99,3 +99,7 @@ input {
   align-items: center;
   grid-column: 3 / 4;
 }
+
+.avatar {
+  border-radius: 100%;
+}

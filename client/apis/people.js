@@ -9,9 +9,9 @@ export function getPeople () {
     })
 }
 
-export function addPerson(name) {
+export function addPerson(person) {
   return request.post(rootUrl + '/add')
-    .send({name})
+    .send(person)
     .then()
 }
 
