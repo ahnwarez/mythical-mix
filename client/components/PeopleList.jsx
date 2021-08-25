@@ -11,7 +11,6 @@ function PeopleList(props) {
             selected: false,
             style: { borderColor: 'rgb(37, 124, 255)' }
         })))
-        console.log(people);
     }, [])
 
     function handleAdd() {
@@ -25,13 +24,11 @@ function PeopleList(props) {
     }
 
     function handlePersonClick(selectedPerson) {
-        console.log(selectedPerson);
         setPeople(
             [...people
                 .map(person => ({
                     ...person,
-                    selected: person.id === selectedPerson.id ? true : false
-                    // style: { borderColor: 'red' }
+                    selected: person.id === selectedPerson.id ? !person.selected : false
                 }))
             ]
         )
