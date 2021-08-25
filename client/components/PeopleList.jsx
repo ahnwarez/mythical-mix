@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import { deletePerson, getPeople } from '../apis/people'
 
+const selected = (flag) => ({
+    borderColor: flag ? 'red' : 'rgb(37, 124, 255)',
+    borderWidth: flag ? 'medium' : 'thin'
+})
+
 function PeopleList(props) {
     const [people, setPeople] = useState([])
 
@@ -25,12 +30,11 @@ function PeopleList(props) {
 
     function handlePersonClick(selectedPerson) {
         setPeople(
-            [...people
+            people
                 .map(person => ({
                     ...person,
                     selected: person.id === selectedPerson.id ? !person.selected : false
                 }))
-            ]
         )
     }
 
@@ -41,7 +45,7 @@ function PeopleList(props) {
                     key={person.id}
                     className='person-card'
                     onClick={() => handlePersonClick(person)}
-                    style={{ borderColor: person.selected ? 'red' : 'rgb(37, 124, 255)' }}
+                    style={ selected(person.selected) }
                 >
                     <div>
                         <img

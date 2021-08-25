@@ -40,6 +40,8 @@ input {
 .person-card {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   border-radius: 10px;
   background-color: rgb(137, 184, 255);
   color:white;
@@ -53,12 +55,13 @@ input {
 }
 
 .name {
-  margin-left: 5px;
+  margin-left: 10px;
 }
 
 .action {
   display: flex;
   flex-direction: row;
+  align-items: center;
   border-radius: 10px;
   background-color: orange;
   color:white;

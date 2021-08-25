@@ -4,7 +4,8 @@ function getPeople(db = connection) {
   return db('people')
     .select()
     .then((people) =>
-      people.map(({ name, image_url }) => ({
+      people.map(({ id, name, image_url }) => ({
+        id,
         name,
         imageUrl: image_url
       }))
