@@ -3,10 +3,10 @@ import { useHistory } from 'react-router-dom';
 
 function TeamsForm(props) {
     const [form, setForm] = useState({
-        team1: '',
-        team2: '',
-        team3: '',
-        team4: ''
+        team1: 'team 1',
+        team2: 'team 2',
+        team3: 'team 3',
+        team4: 'team 4'
     })
 
     function onChange(evt) {

@@ -8,10 +8,6 @@ body {
 .app {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  /* display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-around; */
 }
 
 .form {
@@ -106,4 +102,24 @@ input {
 
 .avatar {
   border-radius: 100%;
+}
+
+.shuffled-teams {
+  grid-column: 1/ span 5;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.shuffle-team {
+ display: grid; 
+ grid-template-rows: 1fr 5fr;
+ height: 300px;
+}
+
+.people-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }

@@ -5,7 +5,7 @@ import { assignGroups, assignGroupNames } from '../mythical-mix'
 
 function Shuffled() {
 
-    const [teams, setTeams] = useState()
+    const [teams, setTeams] = useState([])
 
     useEffect(async () => {
         const storageItem = localStorage.getItem('teams')
@@ -14,34 +14,34 @@ function Shuffled() {
         const people = await getPeople()
         const groupedPeople = assignGroups(people.map(person => person.name))
         const finalTeams = assignGroupNames(teamsArray, groupedPeople)
+        console.log(finalTeams);
         setTeams(finalTeams)
     }, [])
 
     return (
-        <div>
-            <div>
-                <Link to='/'>Home</Link>
-            </div>
-            <div>
-                {
-                    teams ?
-                        teams.map(team => (
-                            <>
-                                <div key={team.teamName}>
-                                    {team.teamName}
-                                </div>
-                                {team.people.map(person => (
-                                    <div key={person}>
-                                        {person}
-                                    </div>
-                                ))}
-                            </>
-                        ))
-                        : null
-                }
-            </div>
+        <div className='shuffled-teams'>
+            {
+                teams.map(({ teamName, people }) => (
+                    <Team key={teamName} name={teamName} people={people} />
+                ))
+            }
         </div>
     )
 }
+
+const Team = ({ name, people }) => (
+    <div className='shuffle-team'>
+        <div key={name}>
+            {name}
+        </div>
+        <div className='people-list'>
+            {people.map(person => (
+                <div key={person} className='person-card'>
+                    {person}
+                </div>
+            ))}
+        </div>
+    </div>
+)
 
 export default Shuffled
