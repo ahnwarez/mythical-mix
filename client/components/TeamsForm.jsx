@@ -30,10 +30,10 @@ function TeamsForm(props) {
 
     return (
         <div className='form'>
-            <input className='input-team' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
-            <input className='input-team' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
-            <input className='input-team' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
-            <input className='input-team' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
+            <input className='text-box' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
+            <input className='text-box' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
+            <input className='text-box' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
+            <input className='text-box' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
             <button
                 className='shuffle-button'
                 onClick={onSubmit} >

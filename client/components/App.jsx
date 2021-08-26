@@ -20,7 +20,10 @@ function App() {
 
   return (
     <>
-      <h2 className='title' onClick={handleOnClick}>Mythical Mix</h2>
+      <header className='title'>
+        <h1 onClick={handleOnClick}>Mythical Mix</h1>
+        <p>Shuffle people into teams</p>
+      </header>
       <div className="details">
         <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
         <Route path='/' exact component={PeopleList} />

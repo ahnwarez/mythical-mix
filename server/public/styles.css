@@ -27,7 +27,7 @@ body {
   gap: 12px;
 }
 
-input {
+.text-box {
   font-size: 20px;
   margin-bottom: 20px;
 }
@@ -99,7 +99,7 @@ input {
 
 .modify-form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   grid-column: 3 / 4;
 }
@@ -131,4 +131,8 @@ input {
 .team-name {
   color:rgb(48, 48, 48);
   text-align:center;
+}
+
+.centered {
+  align-self: center;
 }
