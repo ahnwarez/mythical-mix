@@ -152,13 +152,13 @@ body {
 .shuffle-team {
  display: grid; 
  grid-template-rows: 1fr 5fr;
- height: 300px;
 }
 
 .people-list {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  gap: 20px;
 }
 
 .team-name {
