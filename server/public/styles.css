@@ -5,7 +5,11 @@ body {
 }
 
 /*# sourceMappingURL=styles.css.map*/
-.app {
+#app {
+  display: grid;
+  grid-template-rows: 150px 1fr;
+}
+.details {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
 }

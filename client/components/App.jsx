@@ -21,7 +21,7 @@ function App() {
   return (
     <>
       <h2 className='title' onClick={handleOnClick}>Mythical Mix</h2>
-      <div className="app">
+      <div className="details">
         <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
         <Route path='/' exact component={PeopleList} />
         <Route path='/add' exact component={AddPerson} />
