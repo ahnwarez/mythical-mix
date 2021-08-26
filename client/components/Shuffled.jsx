@@ -17,13 +17,13 @@ function Shuffled() {
         console.log(finalTeams);
         const f = finalTeams
             .map(team => ({
-               ...team, 
+                ...team,
                 people: team.people
                     .map(name => ({
                         name: name,
                         imageUrl: people.find(p => p.name === name).imageUrl
                     }))
-                })
+            })
             );
         setTeams(f)
     }, [])
@@ -42,7 +42,7 @@ function Shuffled() {
 const Team = ({ name, people }) => (
     <div className='shuffle-team'>
         <div key={name} className='team-name'>
-            <strong>{name}</strong>
+            <h2>{name}</h2>
         </div>
         <div className='people-list'>
             {people.map(person => (
