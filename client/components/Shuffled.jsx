@@ -15,7 +15,17 @@ function Shuffled() {
         const groupedPeople = assignGroups(people.map(person => person.name))
         const finalTeams = assignGroupNames(teamsArray, groupedPeople)
         console.log(finalTeams);
-        setTeams(finalTeams)
+        const f = finalTeams
+            .map(team => ({
+               ...team, 
+                people: team.people
+                    .map(name => ({
+                        name: name,
+                        imageUrl: people.find(p => p.name === name).imageUrl
+                    }))
+                })
+            );
+        setTeams(f)
     }, [])
 
     return (
@@ -32,12 +42,24 @@ function Shuffled() {
 const Team = ({ name, people }) => (
     <div className='shuffle-team'>
         <div key={name} className='team-name'>
-           <strong>{name}</strong>
+            <strong>{name}</strong>
         </div>
         <div className='people-list'>
             {people.map(person => (
-                <div key={person} className='person-card'>
-                    {person}
+                <div
+                    key={person.id}
+                    className='person-card'
+                >
+                    <div>
+                        <img
+                            width='50px'
+                            src={person.imageUrl ? person.imageUrl : '/user.svg'}
+                            className='avatar'
+                            alt='user avatar' />
+                    </div>
+                    <div className='name'>
+                        {person.name}
+                    </div>
                 </div>
             ))}
         </div>

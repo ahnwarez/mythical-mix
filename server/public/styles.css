@@ -60,6 +60,7 @@ body {
   font-size: 20px;
   margin-bottom: 20px;
   color: #27296d;
+  font-size: xx-large;
 }
 
 .header {
@@ -145,6 +146,7 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  gap: 50px;
 }
 
 .shuffle-team {
@@ -160,7 +162,7 @@ body {
 }
 
 .team-name {
-  color:rgb(48, 48, 48);
+  color:#f5c7f7;
   text-align:center;
 }
 
