@@ -2,16 +2,44 @@
 html,
 body {
   font-family: "Montserrat", sans-serif;
+  background-color: #27296d;
 }
 
+.first-color { 
+	background: #27296d; 
+}
+	
+.second-color { 
+	background: #5e63b6; 
+}
+
+.third-color { 
+	background: #a393eb; 
+}
+
+.fourth-color { 
+	background: #f5c7f7; 
+}
 /*# sourceMappingURL=styles.css.map*/
-#app {
+/* .app {
   display: grid;
   grid-template-rows: 200px 1fr;
+} */
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 }
+
 .details {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
+  /* display: grid; */
+  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  */
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
 }
 
 .form {
@@ -24,17 +52,20 @@ body {
   grid-column: 4 / 5;
   display: inline-flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   gap: 12px;
 }
 
 .text-box {
   font-size: 20px;
   margin-bottom: 20px;
+  color: #27296d;
 }
 
 .header {
   text-align: center;
   cursor: pointer;
+  color:#f5c7f7; 
 }
 
 .person-card {
@@ -43,19 +74,22 @@ body {
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  background-color: rgb(137, 184, 255);
+  background-color: #5e63b6;
   color:white;
   font-weight: bolder;
-  border-width: 1px;
-  border-style: solid;
-  border-color: rgb(37, 124, 255);
   padding: 10px;
   cursor: default; 
-  box-shadow: 3px 3px rgb(204, 204, 204);
 }
 
 .name {
   margin-left: 10px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  gap: 10px;
 }
 
 .action {
@@ -63,22 +97,19 @@ body {
   flex-direction: row;
   align-items: center;
   border-radius: 10px;
-  background-color: orange;
-  color:white;
-  font-weight: bolder;
-  border-width: 1px;
-  border-style: solid;
+  background-color: #5e63b6;
+  color:#f5c7f7;
   padding: 10px;
   cursor: pointer;
   transition-duration: 0.4s;
 }
 .action:hover {
-  background-color: rgb(216, 141, 2);
+  background-color: #f5c7f7; 
   color:white;
 }
  .shuffle-button {
   align-self: flex-end;
-  background-color: cornflowerblue; 
+  background-color: #5e63b6; 
   border: none;
   color: white;
   padding: 16px 32px;
@@ -92,7 +123,7 @@ body {
 }
 
 .shuffle-button:hover {
-  background-color: #008CBA;
+  background-color: #f5c7f7; 
   color: white;
 }
 

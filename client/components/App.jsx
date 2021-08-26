@@ -19,7 +19,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className='app'>
       <header className='header'>
         <nav>
           <h1 onClick={handleOnClick}>Mythical Mix</h1>
@@ -32,7 +32,7 @@ function App() {
         <Route path='/add' exact component={AddPerson} />
         <Route path='/shuffle' exact component={Shuffled} />
       </div>
-    </>
+    </div>
   )
 }
 

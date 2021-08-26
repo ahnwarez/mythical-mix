@@ -2,8 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { deletePerson, getPeople } from '../apis/people'
 
 const selected = (flag) => ({
-    borderColor: flag ? 'red' : 'rgb(37, 124, 255)',
-    borderWidth: flag ? 'medium' : 'thin'
+    backgroundColor: flag ? '#a393eb' : '#5e63b6'
 })
 
 function PeopleList(props) {
@@ -11,10 +10,10 @@ function PeopleList(props) {
 
     useEffect(async () => {
         const people = await getPeople()
-        setPeople(people.sort(p => p.name).map(p => ({
+        setPeople(people.sort((p1, p2) => p2.name.length - p1.name.length).map(p => ({
             ...p,
             selected: false,
-            style: { borderColor: 'rgb(37, 124, 255)' }
+            style: { backgroundColor: '#a393eb' }
         })))
     }, [])
 
@@ -45,7 +44,7 @@ function PeopleList(props) {
                     key={person.id}
                     className='person-card'
                     onClick={() => handlePersonClick(person)}
-                    style={ selected(person.selected) }
+                    style={selected(person.selected)}
                 >
                     <div>
                         <img
@@ -59,17 +58,19 @@ function PeopleList(props) {
                     </div>
                 </div>
             ))}
-            <div
-                className='action'
-                onClick={handleDelete}
-            >
-                🗑️
-            </div>
-            <div
-                className='action'
-                onClick={handleAdd}
-            >
-                ➕
+            <div className='actions'>
+                <div
+                    className='action'
+                    onClick={handleDelete}
+                >
+                    🗑️
+                </div>
+                <div
+                    className='action'
+                    onClick={handleAdd}
+                >
+                    ➕
+                </div>
             </div>
         </div>
     )
