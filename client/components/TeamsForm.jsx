@@ -1,13 +1,20 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom';
+import React, { useEffect, useState } from 'react'
 
 function TeamsForm(props) {
     const [form, setForm] = useState({
-        team1: 'team 1',
-        team2: 'team 2',
-        team3: 'team 3',
-        team4: 'team 4'
+        team1: '',
+        team2: '',
+        team3: '',
+        team4: ''
     })
+
+    useEffect(() => {
+        const teams = localStorage.getItem('teams')
+        
+        if(teams) {
+            setForm(JSON.parse(teams))
+        }
+    }, [])
 
     function onChange(evt) {
         const { name, value } = evt.target

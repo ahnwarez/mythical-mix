@@ -7,7 +7,7 @@ body {
 /*# sourceMappingURL=styles.css.map*/
 #app {
   display: grid;
-  grid-template-rows: 150px 1fr;
+  grid-template-rows: 200px 1fr;
 }
 .details {
   display: grid;
@@ -126,4 +126,9 @@ input {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+}
+
+.team-name {
+  color:rgb(48, 48, 48);
+  text-align:center;
 }

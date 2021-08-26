@@ -31,8 +31,8 @@ function Shuffled() {
 
 const Team = ({ name, people }) => (
     <div className='shuffle-team'>
-        <div key={name}>
-            {name}
+        <div key={name} className='team-name'>
+           <strong>{name}</strong>
         </div>
         <div className='people-list'>
             {people.map(person => (
