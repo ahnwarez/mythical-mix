@@ -73,7 +73,7 @@ exports.seed = function (knex) {
         {
           "id": 14,
           "name": "Dave",
-          "image_url": "https://www.gannett-cdn.com/presto/2021/01/14/USAT/dc53a309-036c-4be5-ad1a-5848fc169a46-PRESIDENT_DONALD_TRUMP.jpg?crop=3482,2131,x241,y108"
+          "image_url": "https://ca.slack-edge.com/T02SQPVAC-U01THMGCFHD-af1da43ed094-512"
         },
         {
           "id": 15,

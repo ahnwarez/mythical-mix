@@ -22,7 +22,7 @@ function App() {
     <div className='app'>
       <header className='header'>
           <h1 onClick={handleOnClick}>Mythical Mix</h1>
-        <p>/* Shuffle people into teams */</p>
+        <p>/* The awesome Team Generator tool */</p>
       </header>
       <div className="details">
         <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
