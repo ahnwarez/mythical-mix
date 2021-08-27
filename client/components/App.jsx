@@ -21,10 +21,8 @@ function App() {
   return (
     <div className='app'>
       <header className='header'>
-        <nav>
           <h1 onClick={handleOnClick}>Mythical Mix</h1>
-        </nav>
-        <small>Shuffle people into teams</small>
+        <p>/* Shuffle people into teams */</p>
       </header>
       <div className="details">
         <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
