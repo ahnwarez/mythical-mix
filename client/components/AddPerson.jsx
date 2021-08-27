@@ -30,14 +30,14 @@ const AddPerson = (props) => {
                 onChange={handleChange}
                 value={form.name}
                 className='text-box'
-                placeholder='Enter person name'
+                placeholder='First name'
                 name='name'
             />
             <input
                 onChange={handleChange}
                 value={form.image}
                 className='text-box'
-                placeholder='Paste url here or leave it empty'
+                placeholder='Image url here or leave it empty'
                 name='image'
             />
             <button onClick={handleSubmit} className='shuffle-button centered'>➕</button>
