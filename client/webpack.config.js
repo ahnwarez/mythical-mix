@@ -1,5 +1,6 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 
 module.exports = {
   entry: ['./client/index.js', './client/styles/index.scss'],
@@ -10,9 +11,7 @@ module.exports = {
   mode: 'development',
   plugins: [
     new MiniCssExtractPlugin({
-      filename: 'styles.css',
-      chunkFilename: '[id].css',
-      ignoreOrder: false // Enable to remove warnings about conflicting order
+      filename: 'style.min.css'
     })
   ],
   module: {
