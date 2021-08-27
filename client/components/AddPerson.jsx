@@ -10,6 +10,7 @@ const AddPerson = (props) => {
     function handleChange(evt) {
         const { name, value } = evt.target
         setForm({
+            ...form,
             [name]: value
         })
     }

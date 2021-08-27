@@ -10,6 +10,7 @@ function PeopleList(props) {
 
     useEffect(async () => {
         const people = await getPeople()
+        console.log(people);
         setPeople(people.sort((p1, p2) => p2.name.length - p1.name.length).map(p => ({
             ...p,
             selected: false,
