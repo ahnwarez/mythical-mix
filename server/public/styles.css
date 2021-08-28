@@ -1,5 +1,5 @@
 @import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap);
-html,
+/* html,
 body {
   font-family: "Montserrat", sans-serif;
   background-color: #27296d;
@@ -19,28 +19,22 @@ body {
 
 .fourth-color { 
 	background: #f5c7f7; 
-}
-/*# sourceMappingURL=styles.css.map*/
-/* .app {
-  display: grid;
-  grid-template-rows: 200px 1fr;
 } */
-.app {
+
+/* .app {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
 }
 
-.details {
-  /* display: grid; */
-  /* grid-template-columns: 1fr 1fr 1fr 1fr 1fr;  */
+.main {
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 50px;
-}
+} */
 
 .form {
   grid-column: 2 / 3;

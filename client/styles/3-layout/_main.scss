@@ -1,0 +1,5 @@
+@use '../1-helpers/functions';
+
+.width-50percent {
+  width: functions.colWidth(6);
+}

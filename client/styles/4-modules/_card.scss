@@ -1,0 +1,18 @@
+@use '../1-helpers/vars';
+
+.person-card {
+  border-radius: 10px;
+  background-color: vars.$second-color;
+  color:white;
+  padding: 10px;
+
+  &:hover {
+    cursor: pointer;
+    background-color: vars.$fourth-color;
+    color:white;
+  }
+}
+
+.avatar {
+  border-radius: 100%;
+}
