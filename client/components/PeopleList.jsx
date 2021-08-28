@@ -59,13 +59,13 @@ function PeopleList (props) {
       ))}
       <div className='flex-row gap-10px'>
         <div
-          className='action'
+          className='person-card'
           onClick={handleDelete}
         >
                     🗑️
         </div>
         <div
-          className='action'
+          className='person-card'
           onClick={handleAdd}
         >
                     ➕

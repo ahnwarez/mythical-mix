@@ -8,8 +8,11 @@
 
   &:hover {
     cursor: pointer;
+    background-color: vars.$fourth-color;
+    color:white;
   }
 }
 
-.margin-left-10px {
+.avatar {
+  border-radius: 100%;
 }
