@@ -43,23 +43,21 @@ function PeopleList (props) {
       {people.map(person => (
         <div
           key={person.id}
-          className='flex-row person-card'
+          className='flex-row person-card gap-10px'
           onClick={() => handlePersonClick(person)}
           style={selected(person.selected)}
         >
-          <div>
-            <img
-              width='50px'
-              src={person.imageUrl ? person.imageUrl : '/user.svg'}
-              className='avatar'
-              alt='user avatar' />
-          </div>
-          <div className='name'>
+          <img
+            width='50px'
+            src={person.imageUrl ? person.imageUrl : '/user.svg'}
+            className='avatar'
+            alt='user avatar' />
+          <div className=''>
             <strong>{person.name}</strong>
           </div>
         </div>
       ))}
-      <div className='actions'>
+      <div className='flex-row gap-10px'>
         <div
           className='action'
           onClick={handleDelete}
