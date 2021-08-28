@@ -39,11 +39,11 @@ function PeopleList (props) {
   }
 
   return (
-    <div className='people-group'>
+    <div className='flex-row gap-10px'>
       {people.map(person => (
         <div
           key={person.id}
-          className='person-card'
+          className='flex-row person-card'
           onClick={() => handlePersonClick(person)}
           style={selected(person.selected)}
         >
@@ -55,7 +55,7 @@ function PeopleList (props) {
               alt='user avatar' />
           </div>
           <div className='name'>
-            {person.name}
+            <strong>{person.name}</strong>
           </div>
         </div>
       ))}
