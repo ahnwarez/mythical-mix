@@ -1,0 +1,19 @@
+@use '../1-helpers/functions';
+@use '../1-helpers/vars';
+@use '../1-helpers/mixins';
+
+.header {
+  text-align: center;
+  cursor: pointer;
+  color: vars.$third-color;
+  width: functions.colWidth(6);
+
+  
+  &:hover {
+      color: vars.$fourth-color;
+    }
+  @include mixins.media-queries(tablet, min) {
+      color: orange;
+   }
+}
+
