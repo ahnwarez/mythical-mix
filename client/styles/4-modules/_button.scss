@@ -1,0 +1,17 @@
+@use '../1-helpers/vars';
+
+.button {
+  align-self: flex-end;
+  background-color: #5e63b6; 
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f5c7f7; 
+  }
+}

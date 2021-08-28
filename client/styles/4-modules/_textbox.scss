@@ -1,0 +1,6 @@
+@use '../1-helpers/vars';
+
+.text-box {
+  color: vars.$first-color;
+  font-size: xx-large;
+}

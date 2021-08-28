@@ -6,14 +6,12 @@
   text-align: center;
   cursor: pointer;
   color: vars.$third-color;
-  width: functions.colWidth(6);
-
   
   &:hover {
       color: vars.$fourth-color;
-    }
-  @include mixins.media-queries(tablet, min) {
-      color: orange;
-   }
+  }
+  // @include mixins.media-queries(tablet, min) {
+  //     color: orange;
+  //  }
 }
 
