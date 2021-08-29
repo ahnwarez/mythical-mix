@@ -57,7 +57,7 @@ function PeopleList (props) {
           </div>
         </div>
       ))}
-      <div className='flex-row gap-10px'>
+      <div className='add-delete'>
         <div
           className='person-card'
           onClick={handleDelete}

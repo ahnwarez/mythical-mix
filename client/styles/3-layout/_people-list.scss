@@ -3,5 +3,6 @@
 .people-list {
   @include mixins.flex-row-wrap;
   @include mixins.gap-10px; 
+  align-items: center;
 }
 

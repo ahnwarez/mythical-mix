@@ -1,0 +1,8 @@
+@use '../1-helpers/mixins';
+
+.add-delete {
+  @include mixins.flex-row-wrap;
+  @include mixins.gap-10px;
+  width: 30px;
+}
+
