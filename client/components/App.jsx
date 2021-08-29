@@ -19,9 +19,9 @@ function App () {
 
   return (
     <div className='app'>
-      <header className='header'>
-        <h1 onClick={handleOnClick}>Mythical Mix</h1>
-        <p>The awesome Team Generator tool</p>
+      <header>
+        <h1 className='header' onClick={handleOnClick}>Mythical Mix</h1>
+        <p className='description'>The awesome Team Generator tool</p>
       </header>
       <main className="main">
         <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
