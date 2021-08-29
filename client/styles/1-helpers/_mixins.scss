@@ -48,6 +48,10 @@ $breakpoints: (
   align-items: center;
 }
 
+@mixin gap-10px {
+  gap: 10px;
+}
+
 @mixin gap-50px {
   gap: 50px;
 }
