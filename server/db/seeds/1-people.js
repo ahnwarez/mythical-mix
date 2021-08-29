@@ -1,4 +1,3 @@
-// const people = Array.from(({ length: 18 }), (v, i) => String.fromCharCode(65 + i))
 const people = [
   {
     id: 1,
@@ -91,6 +90,7 @@ const people = [
     image_url: 'https://www.history.com/.image/ar_4:3%2Cc_fill%2Ccs_srgb%2Cfl_progressive%2Cq_auto:good%2Cw_1200/MTc2MzAyNDY4NjM0NzgwODQ1/joe-biden-gettyimages-1267438366.jpg'
   }
 ]
+
 function something (groups, week) {
   return people.map(
     (person, index) => ({
@@ -100,7 +100,7 @@ function something (groups, week) {
     }))
 }
 
-function main () {
+exports.seed = function (knex) {
   const groups = [1, 2, 3, 4]
   const table = []
   for (let week = 1; week <= 6; week++) {
@@ -112,7 +112,11 @@ function main () {
     const result = something(groups, week)
     table.push(result)
   }
-  console.log(table.flat())
+  // Deletes ALL existing entries
+  return knex('people_teams').del()
+    .then(function () {
+      // Inserts seed entries
+      return knex('people_teams').insert(table.flat())
+    }
+    )
 }
-
-main()
