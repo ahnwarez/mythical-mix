@@ -9,14 +9,12 @@ export function getPeople () {
     })
 }
 
-export function addPerson(person) {
+export function addPerson (person) {
   return request.post(rootUrl + '/add')
     .send(person)
-    .then()
 }
 
-export function deletePerson(id) {
+export function deletePerson (id) {
   return request.delete(rootUrl + '/delete')
-    .send({id})
-    .then()
+    .send({ id })
 }
