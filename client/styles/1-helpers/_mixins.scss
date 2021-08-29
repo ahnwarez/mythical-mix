@@ -48,6 +48,12 @@ $breakpoints: (
   align-items: center;
 }
 
+@mixin flex-row-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+}
+
 @mixin gap-10px {
   gap: 10px;
 }

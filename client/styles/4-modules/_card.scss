@@ -1,6 +1,10 @@
 @use '../1-helpers/vars';
+@use '../1-helpers/mixins';
 
 .person-card {
+  @include mixins.flex-column-center;
+  justify-content: space-between;
+  gap: 10px;
   border-radius: 10px;
   background-color: vars.$second-color;
   color:white;

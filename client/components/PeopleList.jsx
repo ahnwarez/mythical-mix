@@ -39,7 +39,7 @@ function PeopleList (props) {
   }
 
   return (
-    <div className='flex-row gap-10px'>
+    <div className='people-list'>
       {people.map(person => (
         <div
           key={person.id}
