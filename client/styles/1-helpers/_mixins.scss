@@ -42,6 +42,11 @@ $breakpoints: (
     }
 }
 
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
 @mixin flex-column-center {
   display: flex;
   flex-direction: column;
@@ -52,6 +57,11 @@ $breakpoints: (
   display: flex;
   flex-direction: row;
   flex-wrap: wrap; 
+}
+
+@mixin flex-row-no-wrap {
+  display: flex;
+  flex-direction: row;
 }
 
 @mixin gap-10px {

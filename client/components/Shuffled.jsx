@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import { getPeople } from '../apis/people'
 import { assignGroups, assignGroupNames } from '../mythical-mix'
 
@@ -28,7 +27,7 @@ function Shuffled () {
   }, [])
 
   return (
-    <div className='shuffled-teams'>
+    <div className='teams'>
       {
         teams.map(({ teamName, people }) => (
           <Team key={teamName} name={teamName} people={people} />
@@ -39,7 +38,7 @@ function Shuffled () {
 }
 
 const Team = ({ name, people }) => (
-  <div className='shuffle-team'>
+  <div className='team'>
     <div key={name} className='team-name'>
       <h2>{name}</h2>
     </div>
