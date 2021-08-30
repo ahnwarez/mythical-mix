@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getPeople } from '../apis/people'
-import { assignGroups, assignGroupNames } from '../mythical-mix'
+import { makeTeams } from '../mythical-mix'
 
 function Shuffled () {
   const [teams, setTeams] = useState([])
@@ -10,27 +10,15 @@ function Shuffled () {
     const teamsArray = Object.values(JSON.parse(storageItem))
 
     const people = await getPeople()
-    const groupedPeople = assignGroups(people.map(person => person.name))
-    const finalTeams = assignGroupNames(teamsArray, groupedPeople)
-    console.log(finalTeams)
-    const f = finalTeams
-      .map(team => ({
-        ...team,
-        people: team.people
-          .map(name => ({
-            name: name,
-            imageUrl: people.find(p => p.name === name).imageUrl
-          }))
-      })
-      )
-    setTeams(f)
+    const result = makeTeams(teamsArray, people)
+    setTeams(result)
   }, [])
 
   return (
     <div className='teams'>
       {
-        teams.map(({ teamName, people }) => (
-          <Team key={teamName} name={teamName} people={people} />
+        Object.keys(teams).map(teamName => (
+          <Team key={teamName} name={teamName} people={teams[teamName]} />
         ))
       }
     </div>
