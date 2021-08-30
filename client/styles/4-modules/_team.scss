@@ -5,16 +5,18 @@
   @include mixins.flex-row-wrap;
   align-items: flex-start;
   justify-content: center;
-  gap: 50px
+  gap: 50px;
 }
 
 .team {
-  @include mixins.flex-column;
-  @include mixins.gap-10px; 
-  justify-content: start;
+  @include mixins.flex-row-wrap;
+  gap: 50px;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .team-name {
+  justify-self: end;
   color:#f5c7f7;
   text-align:center;
   letter-spacing: 3px;

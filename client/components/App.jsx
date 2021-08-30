@@ -19,8 +19,8 @@ function App () {
 
   return (
     <div className='app'>
-      <header>
-        <h1 className='header' onClick={handleOnClick}>Mythical Mix</h1>
+      <header className='header'>
+        <h1 onClick={handleOnClick}>Mythical Mix</h1>
         <p className='description'>The awesome Team Generator tool</p>
       </header>
       <main className="main">

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { deletePerson, getPeople } from '../apis/people'
 
 const selected = (flag) => ({
-  backgroundColor: flag ? '#a393eb' : '#5e63b6'
+  backgroundColor: flag ? '#a393eb' : '#27296d'
 })
 
 function PeopleList (props) {
@@ -12,8 +12,8 @@ function PeopleList (props) {
     const data = await getPeople()
     setPeople(data.sort((p1, p2) => p1.name.localeCompare(p2.name)).map(p => ({
       ...p,
-      selected: false,
-      style: { backgroundColor: '#a393eb' }
+      selected: false
+      // style: { backgroundColor: '#27296d' }
     })))
   }, [])
 

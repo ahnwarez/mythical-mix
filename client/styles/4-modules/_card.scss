@@ -6,14 +6,14 @@
   justify-content: space-between;
   gap: 10px;
   border-radius: 10px;
-  background-color: vars.$second-color;
+  background-color: vars.$first-color;
   color:white;
   padding: 10px;
 
   &:hover {
     cursor: pointer;
-    background-color: vars.$fourth-color;
-    color:white;
+    background-color: vars.$third-color;
+    color:vars.$fourth-color;
   }
 }
 
