@@ -1,0 +1,6 @@
+@use '../1-helpers/vars';
+
+.description {
+  color: vars.$third-color;
+  cursor: default;
+}

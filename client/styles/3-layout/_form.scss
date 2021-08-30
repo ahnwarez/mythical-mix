@@ -1,8 +1,7 @@
 @use '../1-helpers/functions';
 @use '../1-helpers/mixins';
 
-.main {
+.form {
   @include mixins.flex-column-center;
-  @include mixins.gap-50px;
-  width: functions.colWidth(6);
+  @include mixins.gap-10px;
 }

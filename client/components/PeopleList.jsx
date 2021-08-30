@@ -9,9 +9,8 @@ function PeopleList (props) {
   const [people, setPeople] = useState([])
 
   useEffect(async () => {
-    const people = await getPeople()
-    console.log(people)
-    setPeople(people.sort((p1, p2) => p2.name.length - p1.name.length).map(p => ({
+    const data = await getPeople()
+    setPeople(data.sort((p1, p2) => p1.name.localeCompare(p2.name)).map(p => ({
       ...p,
       selected: false,
       style: { backgroundColor: '#a393eb' }
@@ -39,7 +38,7 @@ function PeopleList (props) {
   }
 
   return (
-    <div className='flex-row gap-10px'>
+    <div className='people-list'>
       {people.map(person => (
         <div
           key={person.id}
@@ -57,7 +56,7 @@ function PeopleList (props) {
           </div>
         </div>
       ))}
-      <div className='flex-row gap-10px'>
+      <div className='add-delete'>
         <div
           className='person-card'
           onClick={handleDelete}

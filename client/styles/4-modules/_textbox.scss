@@ -3,4 +3,9 @@
 .text-box {
   color: vars.$first-color;
   font-size: xx-large;
+
+  &::placeholder {
+    font-size: x-large;
+    vertical-align: middle;
+  }
 }

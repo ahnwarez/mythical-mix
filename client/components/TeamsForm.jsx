@@ -29,7 +29,7 @@ function TeamsForm (props) {
   }
 
   return (
-    <div className='flex-column gap-10px'>
+    <div className='form'>
       <input className='text-box' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
       <input className='text-box' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
       <input className='text-box' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />

@@ -18,12 +18,12 @@ function App () {
   }
 
   return (
-    <div className='flex-column gap-50px'>
-      <header className='header'>
-        <h1 onClick={handleOnClick}>Mythical Mix</h1>
-        <p>The awesome Team Generator tool</p>
+    <div className='app'>
+      <header>
+        <h1 className='header' onClick={handleOnClick}>Mythical Mix</h1>
+        <p className='description'>The awesome Team Generator tool</p>
       </header>
-      <main className="flex-column gap-50px width-50percent">
+      <main className="main">
         <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
         <Route path='/' exact component={PeopleList} />
         <Route path='/add' exact component={AddPerson} />

@@ -41,3 +41,33 @@ $breakpoints: (
         }
     }
 }
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-column-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@mixin flex-row-wrap {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap; 
+}
+
+@mixin flex-row-no-wrap {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin gap-10px {
+  gap: 10px;
+}
+
+@mixin gap-50px {
+  gap: 50px;
+}
