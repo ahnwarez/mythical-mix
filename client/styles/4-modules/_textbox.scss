@@ -1,5 +1,5 @@
 @use '../1-helpers/vars';
-
+@use '../1-helpers/mixins';
 .text-box {
   color: vars.$first-color;
   font-size: xx-large;
@@ -7,5 +7,8 @@
   &::placeholder {
     font-size: x-large;
     vertical-align: middle;
+  }
+  @include mixins.media-queries(mobile, max) {
+    font-size: large;
   }
 }

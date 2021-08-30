@@ -1,8 +1,14 @@
 @use '../1-helpers/mixins';
+@use '../1-helpers/functions';
 
 .people-list {
   @include mixins.flex-row-wrap;
   @include mixins.gap-10px; 
   align-items: center;
+  width: functions.colWidth(6);
+
+  @include mixins.media-queries(mobile, max) {
+    width: functions.colWidth(12);
+  }
 }
 
