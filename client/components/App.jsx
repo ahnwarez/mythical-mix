@@ -29,6 +29,9 @@ function App () {
         <Route path='/add' exact component={AddPerson} />
         <Route path='/shuffle' exact component={Shuffled} />
       </main>
+      <footer>
+        @EnpiralDevAcademy
+      </footer>
     </div>
   )
 }

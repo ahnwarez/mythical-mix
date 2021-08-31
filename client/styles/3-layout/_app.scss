@@ -2,5 +2,6 @@
 
 .app {
   @include mixins.flex-column-center;
-  @include mixins.gap-50px;
+  justify-content: space-between;
+  height: 99vh;
 }
