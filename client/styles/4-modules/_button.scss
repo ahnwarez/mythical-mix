@@ -4,7 +4,7 @@
   align-self: flex-end;
   background-color: vars.$first-color;
   border: none;
-  color: white;
+  color: vars.$bright-color;
   padding: 16px 32px;
   font-size: 16px;
   margin: 4px 2px;
@@ -12,6 +12,6 @@
   cursor: pointer;
 
   &:hover {
-    background-color: #f5c7f7; 
+    background-color: vars.$fourth-color; 
   }
 }
