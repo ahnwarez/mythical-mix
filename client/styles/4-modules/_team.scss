@@ -1,5 +1,5 @@
 @use '../1-helpers/mixins';
-
+@use '../1-helpers/vars';
 
 .teams {
   @include mixins.flex-row-wrap;
@@ -17,10 +17,10 @@
 
 .team-name {
   justify-self: end;
-  color:#f5c7f7;
+  color: vars.$fourth-color;
   text-align:center;
   letter-spacing: 3px;
-  background: linear-gradient(90deg, #27296d, #fffdff, #27296d);
+  background: linear-gradient(90deg, vars.$first-color, vars.$bright-color, vars.$fourth-color);
   background-repeat: no-repeat;
   background-size: 80%;
   animation: animate 2s infinite;
