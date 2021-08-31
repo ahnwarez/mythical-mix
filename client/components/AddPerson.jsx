@@ -15,10 +15,10 @@ const AddPerson = (props) => {
     })
   }
 
-  async function handleSubmit () {
+  function handleSubmit () {
     const defaultImageUrl = '/user.svg'
 
-    await addPerson({
+    addPerson({
       name: form.name,
       imageUrl: form.image ? form.image : defaultImageUrl
     })

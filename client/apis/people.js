@@ -1,20 +1,25 @@
-import request from 'superagent'
-
-const rootUrl = '/api/v1/people'
+const localStoragePeople = 'people'
 
 export function getPeople () {
-  return request.get(rootUrl + '/')
-    .then(res => {
-      return res.body.results
-    })
+  const str = localStorage.getItem(localStoragePeople)
+  if (str) {
+    return JSON.parse(str)
+  } else {
+    return []
+  }
 }
 
 export function addPerson (person) {
-  return request.post(rootUrl + '/add')
-    .send(person)
+  const people = getPeople()
+  const newPeople = [
+    ...people,
+    person
+  ]
+  localStorage.setItem(localStoragePeople, JSON.stringify(newPeople))
 }
 
 export function deletePerson (id) {
-  return request.delete(rootUrl + '/delete')
-    .send({ id })
+  const people = getPeople()
+  const newPeople = people.filter(person => person.id !== id)
+  localStorage.setItem(localStoragePeople, JSON.stringify(newPeople))
 }

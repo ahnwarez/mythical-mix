@@ -8,8 +8,8 @@ const selected = (flag) => ({
 function PeopleList (props) {
   const [people, setPeople] = useState([])
 
-  useEffect(async () => {
-    const data = await getPeople()
+  useEffect(() => {
+    const data = getPeople()
     setPeople(data.sort((p1, p2) => p1.name.localeCompare(p2.name)).map(p => ({
       ...p,
       selected: false
@@ -21,9 +21,9 @@ function PeopleList (props) {
     props.history.push('/add')
   }
 
-  async function handleDelete () {
+  function handleDelete () {
     const { id } = people.find(person => person.selected)
-    await deletePerson(id)
+    deletePerson(id)
     setPeople([...people.filter(person => person.id !== id)])
   }
 
@@ -51,7 +51,7 @@ function PeopleList (props) {
             src={person.imageUrl ? person.imageUrl : '/user.svg'}
             className='avatar'
             alt='user avatar' />
-          <div className=''>
+          <div key={person.id + 'name'}>
             <strong>{person.name}</strong>
           </div>
         </div>

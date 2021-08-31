@@ -5,11 +5,11 @@ import { makeTeams } from '../mythical-mix'
 function Shuffled () {
   const [teams, setTeams] = useState([])
 
-  useEffect(async () => {
+  useEffect(() => {
     const storageItem = localStorage.getItem('teams')
     const teamsArray = Object.values(JSON.parse(storageItem))
 
-    const people = await getPeople()
+    const people = getPeople()
     const result = makeTeams(teamsArray, people)
     setTeams(result)
   }, [])
