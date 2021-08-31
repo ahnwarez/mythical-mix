@@ -1,3 +1,4 @@
+import { v4 as uuidv4 } from 'uuid'
 const localStoragePeople = 'people'
 
 export function getPeople () {
@@ -13,7 +14,10 @@ export function addPerson (person) {
   const people = getPeople()
   const newPeople = [
     ...people,
-    person
+    {
+      ...person,
+      id: uuidv4()
+    }
   ]
   localStorage.setItem(localStoragePeople, JSON.stringify(newPeople))
 }
