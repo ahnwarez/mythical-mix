@@ -2,9 +2,9 @@
 @use '../1-helpers/vars';
 
 .teams {
-  @include mixins.flex-row-wrap;
-  align-items: flex-start;
-  justify-content: center;
+  @include mixins.flex-column;
+  // align-items: flex-start;
+  // justify-content: center;
   gap: 50px;
 }
 
