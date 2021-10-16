@@ -12,6 +12,8 @@
   cursor: pointer;
 
   &:hover {
-    background-color: vars.$fourth-color; 
+    outline: none;
+    border-color: vars.$fourth-color;
+    box-shadow: 0 0 10px vars.$fourth-color;
   }
 }
