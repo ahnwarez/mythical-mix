@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "express": "^4.17.1",
+    "framer-motion": "^4.1.17",
     "knex": "^0.95.11",
     "pg": "^8.5.1",
     "superagent": "^6.1.0",

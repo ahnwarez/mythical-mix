@@ -12,7 +12,7 @@ export function makeTeams (teamNames, people) {
   }
 
   // eslint-disable-next-line no-console
-  console.log(JSON.stringify(teams, null, 2))
+  // console.log(JSON.stringify(teams, null, 2))
   return teams
 
   function shuffle (input) {

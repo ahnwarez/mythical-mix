@@ -1,5 +1,5 @@
 import React from 'react'
-import { Route, useHistory } from 'react-router-dom'
+import { Route, useHistory, useLocation, Switch } from 'react-router-dom'
 import TeamsForm from './TeamsForm'
 import PeopleList from './PeopleList'
 import Shuffled from './Shuffled'
@@ -7,6 +7,7 @@ import AddPerson from './AddPerson'
 
 function App () {
   const history = useHistory()
+  const location = useLocation()
 
   function onSubmit (form) {
     localStorage.setItem('teams', JSON.stringify(form))
@@ -24,10 +25,18 @@ function App () {
         <p className='description'>The awesome Team Generator tool</p>
       </header>
       <main className="main">
-        <Route path='/' exact render={() => <TeamsForm onSubmit={onSubmit} />} />
-        <Route path='/' exact component={PeopleList} />
-        <Route path='/add' exact component={AddPerson} />
-        <Route path='/shuffle' exact component={Shuffled} />
+        <Switch location={location} key={location.key}>
+          <Route exact path='/'>
+            <TeamsForm onSubmit={onSubmit} />
+            <PeopleList history={history} />
+          </Route>
+          <Route exact path='/add'>
+            <AddPerson history={history} />
+          </Route>
+          <Route exact path='/shuffle'>
+            <Shuffled />
+          </Route>
+        </Switch>
       </main>
       <footer>
         @EnpiralDevAcademy

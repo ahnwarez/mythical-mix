@@ -38,7 +38,7 @@ function PeopleList (props) {
   }
 
   return (
-    <div className='people-list'>
+    <div className='people-list-view'>
       {people.map(person => (
         <div
           key={person.id}

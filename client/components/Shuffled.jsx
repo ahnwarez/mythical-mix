@@ -1,6 +1,22 @@
 import React, { useEffect, useState } from 'react'
 import { getPeople } from '../apis/people'
 import { makeTeams } from '../mythical-mix'
+import { motion } from 'framer-motion'
+
+const variants = {
+  visible: i => ({
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: i * 0.5,
+      ease: 'easeOut'
+    }
+  }),
+  hidden: {
+    scale: 0.5,
+    opacity: 0
+  }
+}
 
 function Shuffled () {
   const [teams, setTeams] = useState([])
@@ -31,10 +47,14 @@ const Team = ({ name, people }) => (
       <h2>{name}</h2>
     </div>
     <div className='people-list'>
-      {people.map(person => (
-        <div
+      {people.map((person, i) => (
+        <motion.div
           key={person.id}
           className='person-card'
+          custom={i}
+          initial='hidden'
+          animate='visible'
+          variants={variants}
         >
           <div>
             <img
@@ -46,7 +66,7 @@ const Team = ({ name, people }) => (
           <div className='name'>
             {person.name}
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   </div>

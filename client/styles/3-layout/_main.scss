@@ -4,7 +4,7 @@
 .main {
   @include mixins.flex-column-center;
   @include mixins.gap-50px;
-
+  margin-top: 50px;
   // @include mixins.media-queries(mobile, max) {
   //   width: functions.colWidth(12);
   //   gap: 10px;
