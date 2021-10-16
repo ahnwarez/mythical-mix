@@ -22,7 +22,6 @@ function App () {
     <div className='app'>
       <header className='header'>
         <h1 onClick={handleOnClick}>Mythical Mix</h1>
-        <p className='description'>The awesome Team Generator tool</p>
       </header>
       <main className="main">
         <Switch location={location} key={location.key}>
