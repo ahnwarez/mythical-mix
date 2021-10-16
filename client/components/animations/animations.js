@@ -1,4 +1,4 @@
-export const routeVariant = {
+export const peopleVariant = {
   hidden: {
     opacity: 0
   },

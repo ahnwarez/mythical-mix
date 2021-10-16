@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { deletePerson, getPeople } from '../apis/people'
+import { motion } from 'framer-motion'
+import { peopleVariant } from './animations/animations'
 
 const selected = (flag) => ({
   backgroundColor: flag ? '#a393eb' : '#27296d'
@@ -38,7 +40,11 @@ function PeopleList (props) {
   }
 
   return (
-    <div className='people-list-view'>
+    <motion.div className='people-list-view'
+      variants={peopleVariant}
+      initial='hidden'
+      animate='visible'
+    >
       {people.map(person => (
         <div
           key={person.id}
@@ -70,7 +76,7 @@ function PeopleList (props) {
                     ➕
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
 

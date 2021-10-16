@@ -1,6 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import { motion } from 'framer-motion'
-import { routeVariant } from './animations/animations'
 
 function TeamsForm (props) {
   const [form, setForm] = useState({
@@ -31,18 +29,13 @@ function TeamsForm (props) {
   }
 
   return (
-    <motion.div className='form'
-      variants={routeVariant}
-      initial='hidden'
-      animate='visible'
-      exit='exit'
-    >
+    <div className='form' >
       <input className='text-box' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
       <input className='text-box' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
       <input className='text-box' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
       <input className='text-box' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
       <button className='button' onClick={onSubmit} >🔀 Shuffle</button>
-    </motion.div>
+    </div>
   )
 }
 
