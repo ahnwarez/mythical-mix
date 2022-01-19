@@ -5,7 +5,8 @@ function TeamsForm (props) {
     team1: '',
     team2: '',
     team3: '',
-    team4: ''
+    team4: '',
+    team5: ''
   })
 
   useEffect(() => {
@@ -34,6 +35,7 @@ function TeamsForm (props) {
       <input className='text-box' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
       <input className='text-box' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
       <input className='text-box' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
+      <input className='text-box' type='text' placeholder='Enter team name' name='team5' value={form.team5} onChange={onChange} />
       <button className='button' onClick={onSubmit} >🔀 Shuffle</button>
     </div>
   )
