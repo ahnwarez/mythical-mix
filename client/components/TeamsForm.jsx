@@ -1,21 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 function TeamsForm (props) {
-  const [form, setForm] = useState({
-    team1: '',
-    team2: '',
-    team3: '',
-    team4: '',
-    team5: ''
-  })
-
-  useEffect(() => {
-    const teams = localStorage.getItem('teams')
-
-    if (teams) {
-      setForm(JSON.parse(teams))
-    }
-  }, [])
+  console.log('render')
+  const [state, setState] = useState(4)
+  const [form, setForm] = useState(Array.from({ length: state }, (_, i) => i)
+    .reduce((ac, a) => ({ ...ac, ['team' + a]: '' }), {}))
 
   function onChange (evt) {
     const { name, value } = evt.target
@@ -29,15 +18,38 @@ function TeamsForm (props) {
     props.onSubmit(form)
   }
 
+  function onNumberChange (event) {
+    if (!isNaN(event.target.value)) {
+      setState(Number(event.target.value))
+      setForm(Array.from({ length: (Number(event.target.value)) }, (_, i) => i)
+        .reduce((ac, a) => ({ ...ac, ['team' + a]: '' }), {}))
+    }
+  }
+
   return (
-    <div className='form' >
-      <input className='text-box' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
-      <input className='text-box' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
-      <input className='text-box' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
-      <input className='text-box' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
-      <input className='text-box' type='text' placeholder='Enter team name' name='team5' value={form.team5} onChange={onChange} />
-      <button className='button' onClick={onSubmit} >🔀 Shuffle</button>
-    </div>
+    <>
+      <input type="range" min="3" max="6" name='teamNumber' onChange={onNumberChange} value={state} />
+      <div className='form' >
+        { Object.keys(form).map(key =>
+          <input
+            className='text-box'
+            type='text'
+            placeholder='Enter team name'
+            key={key}
+            name={key}
+            value={form[key]}
+            onChange={onChange}
+          />
+        )}
+        {/* <input className='text-box' type='text' placeholder='Enter team name' name='team1' value={form.team1} onChange={onChange} />
+        <input className='text-box' type='text' placeholder='Enter team name' name='team2' value={form.team2} onChange={onChange} />
+        <input className='text-box' type='text' placeholder='Enter team name' name='team3' value={form.team3} onChange={onChange} />
+        <input className='text-box' type='text' placeholder='Enter team name' name='team4' value={form.team4} onChange={onChange} />
+        <input className='text-box' type='text' placeholder='Enter team name' name='team5' value={form.team5} onChange={onChange} /> */}
+        <button className='button' onClick={onSubmit} >🔀 Shuffle</button>
+      </div>
+
+    </>
   )
 }
 
