@@ -31,17 +31,14 @@
       "@babel/plugin-transform-runtime"
     ]
   },
-  "eslintConfig": {
-    "extends": "eda",
-    "ignorePatterns": [
-      "bundle.js"
-    ]
-  },
   "dependencies": {
+    "cosine": "^0.0.1",
     "express": "^4.17.1",
     "framer-motion": "^4.1.17",
     "knex": "^0.95.11",
+    "lodash": "^4.17.21",
     "pg": "^8.5.1",
+    "similarity-matrix": "^0.1.9",
     "superagent": "^6.1.0",
     "uuid": "^8.3.2",
     "xstate": "^4.23.1"
@@ -76,5 +73,9 @@
     "supertest": "6.0.1",
     "webpack": "5.9.0",
     "webpack-cli": "4.2.0"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": false
   }
 }
