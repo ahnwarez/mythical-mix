@@ -1,6 +1,27 @@
 const cosine = require('cosine')
 const data = require('./data/students')
 
+const clementine = 'clementine'
+const daniel = 'daniel'
+const garret = 'garret'
+const gen = 'gen'
+const hon = 'hon'
+const jasmine = 'jasmine'
+const jesser = 'jesser'
+const jessew = 'jessew'
+const kang = 'kang'
+const karmel = 'karmel'
+const katie = 'katie'
+const maria = 'maria'
+const matt = 'matt'
+const min = 'min'
+const finn = 'finn'
+const rachel = 'rachel'
+const sindre = 'sindre'
+const tai = 'tai'
+const tiaan = 'tiaan'
+const zak = 'zak'
+
 function areSimilar(shuffle1, shuffle2) {
   let results = []
   for (const arr1 of shuffle1) {
@@ -13,12 +34,19 @@ function areSimilar(shuffle1, shuffle2) {
 }
 
 for (let index = 0; index < 10; index++) {
-  const shuffle1 = makeTeams(['1', '2', '3', '4'], data.people)
+  const shuffle1 = {
+    1: [karmel, finn, tai, min, clementine],
+    2: [maria, hon, matt, garret, gen],
+    3: [jessew, daniel, jesser, sindre, jasmine],
+    4: [tiaan, kang, rachel, zak, katie],
+  }
   const shuffle2 = makeTeams(['1', '2', '3', '4'], data.people)
   const result = areSimilar(Object.values(shuffle1), Object.values(shuffle2))
-  console.table(shuffle1)
-  console.table(shuffle2)
-  console.log(result)
+  if (result < 0.4) {
+    // console.table(shuffle1)
+    console.table(shuffle2)
+    break
+  }
 }
 
 function makeTeams(teamNames, people) {
